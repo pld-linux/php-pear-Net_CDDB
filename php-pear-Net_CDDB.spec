@@ -30,7 +30,7 @@ In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Klasa Net_CDDB s³u¿y do wspó³pracy z serwerami audio-cd CDDB za pomoc±
-ró¿nych protoko³ów. Klasa mo¿e byæ u¿ytka do uzyskania szczegó³owych
+ró¿nych protoko³ów. Klasa mo¿e byæ u¿yta do uzyskania szczegó³owych
 informacji o p³ycie audio (nazwy utworów, albumu, informacje o
 arty¶cie) z serwera CDDB dla danej p³yty.
 
