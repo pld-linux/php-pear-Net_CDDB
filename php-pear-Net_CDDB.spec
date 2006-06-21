@@ -7,12 +7,12 @@
 Summary:	%{_pearname} - Package to access and query CDDB audio-CD servers
 Summary(pl):	%{_pearname} - Pakiet do wspó³pracy z serwerami CDDB
 Name:		php-pear-%{_pearname}
-Version:	0.1.0
+Version:	0.2.0
 Release:	1
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	271b8830440286c147867cecb337475e
+# Source0-md5:	7ce657b4cb9d847000566e5c76634eb1
 URL:		http://pear.php.net/package/Net_CDDB/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -55,7 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Net/CDDB.php
 %{php_pear_dir}/Net/CDDB
-%{php_pear_dir}/Net/docs/examples/CDDB_example.php
+%{php_pear_dir}/Net/docs/examples/*
 %{php_pear_dir}/Net/tests/CDDBTest.php
+%{php_pear_dir}/Net/tests/CDDBTest_Filesystem.php
 %{php_pear_dir}/Net/tests/CDDBTest_HTTP.php
 %{php_pear_dir}/Net/tests/CDDBTest_CDDBP.php
