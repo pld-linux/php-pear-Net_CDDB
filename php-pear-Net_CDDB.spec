@@ -5,7 +5,7 @@
 %define		_pearname	Net_CDDB
 
 Summary:	%{_pearname} - Package to access and query CDDB audio-CD servers
-Summary(pl):	%{_pearname} - Pakiet do wspÛ≥pracy z serwerami CDDB
+Summary(pl.UTF-8):   %{_pearname} - Pakiet do wsp√≥≈Çpracy z serwerami CDDB
 Name:		php-pear-%{_pearname}
 Version:	0.2.0
 Release:	2
@@ -29,17 +29,17 @@ given audio CD.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa Net_CDDB s≥uøy do wspÛ≥pracy z serwerami audio-cd CDDB za pomoc±
-rÛønych protoko≥Ûw. Klasa moøe byÊ uøyta do uzyskania szczegÛ≥owych
-informacji o p≥ycie audio (nazwy utworÛw, albumu, informacje o
-arty∂cie) z serwera CDDB dla danej p≥yty.
+%description -l pl.UTF-8
+Klasa Net_CDDB s≈Çu≈ºy do wsp√≥≈Çpracy z serwerami audio-cd CDDB za pomocƒÖ
+r√≥≈ºnych protoko≈Ç√≥w. Klasa mo≈ºe byƒá u≈ºyta do uzyskania szczeg√≥≈Çowych
+informacji o p≈Çycie audio (nazwy utwor√≥w, albumu, informacje o
+arty≈õcie) z serwera CDDB dla danej p≈Çyty.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
@@ -48,7 +48,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
