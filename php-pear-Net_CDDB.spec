@@ -5,7 +5,7 @@
 %define		_pearname	Net_CDDB
 
 Summary:	%{_pearname} - Package to access and query CDDB audio-CD servers
-Summary(pl.UTF-8):   %{_pearname} - Pakiet do współpracy z serwerami CDDB
+Summary(pl.UTF-8):	%{_pearname} - Pakiet do współpracy z serwerami CDDB
 Name:		php-pear-%{_pearname}
 Version:	0.2.0
 Release:	2
@@ -39,7 +39,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
