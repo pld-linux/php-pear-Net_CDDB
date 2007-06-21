@@ -7,17 +7,20 @@
 Summary:	%{_pearname} - Package to access and query CDDB audio-CD servers
 Summary(pl.UTF-8):	%{_pearname} - Pakiet do współpracy z serwerami CDDB
 Name:		php-pear-%{_pearname}
-Version:	0.2.0
-Release:	2
+Version:	0.3.0
+Release:	1
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	7ce657b4cb9d847000566e5c76634eb1
+# Source0-md5:	c174cd8ed66c81292d627d0ba5c7d1ba
 URL:		http://pear.php.net/package/Net_CDDB/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
+Requires:	php-pear-HTTP_Request >= 1.3.0
+Requires:	php-pear-MDB2 >= 1:2.2.2
+Requires:	php-pear-Net_Socket >= 1.0.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,6 +56,13 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+# class/test -> tests
+install -d ./%{php_pear_dir}/tests/%{_pearname}
+mv ./%{php_pear_dir}/{%{_class}/tests/*,tests/%{_pearname}}
+
+# class/docs -> docs
+install -d docs/%{_pearname}/docs
+mv ./%{php_pear_dir}/%{_class}/docs/* docs/%{_pearname}/docs
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -64,15 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc install.log docs/%{_pearname}/{docs/CDDB_example_output.txt,docs/CDDB_fileformat.txt,docs/CDDB_notes.txt,docs/CDDB_protocol.txt,docs/CDDB_record.txt}
+%doc install.log docs/%{_pearname}/docs/*
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Net/CDDB.php
 %{php_pear_dir}/Net/CDDB
-%{php_pear_dir}/Net/docs/examples/*
 
 %files tests
 %defattr(644,root,root,755)
-%{php_pear_dir}/Net/tests/CDDBTest.php
-%{php_pear_dir}/Net/tests/CDDBTest_Filesystem.php
-%{php_pear_dir}/Net/tests/CDDBTest_HTTP.php
-%{php_pear_dir}/Net/tests/CDDBTest_CDDBP.php
+%{php_pear_dir}/tests/*
