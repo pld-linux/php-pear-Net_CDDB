@@ -21,6 +21,7 @@ Requires:	php-pear
 Requires:	php-pear-HTTP_Request >= 1.3.0
 Requires:	php-pear-MDB2 >= 1:2.2.2
 Requires:	php-pear-Net_Socket >= 1.0.6
+Obsoletes:	php-pear-Net_CDDB-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,20 +40,6 @@ informacji o płycie audio (nazwy utworów, albumu, informacje o
 artyście) z serwera CDDB dla danej płyty.
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoReq:	no
-AutoProv:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -78,7 +65,3 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Net/CDDB.php
 %{php_pear_dir}/Net/CDDB
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
